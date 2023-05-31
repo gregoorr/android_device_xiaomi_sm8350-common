@@ -9,5 +9,8 @@ get_prop(system_app, vendor_aware_available_prop)
 allow system_app hal_googlebattery_service:service_manager find;
 binder_call(system_app, hal_googlebattery)
 
+# Battery Health
+r_dir_file(system_app, sysfs_battery_supply)
+
 # Zram
 r_dir_file(system_app, sysfs_zram)
