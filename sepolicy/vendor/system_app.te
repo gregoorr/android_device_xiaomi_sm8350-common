@@ -1,34 +1,9 @@
 # Allow system app to access HALs 
-binder_call(system_app, hal_fingerprint_default)
-binder_call(system_app, hal_audio_default)
-binder_call(system_app, hal_camera_default)
-binder_call(system_app, hal_contexthub_default)
-binder_call(system_app, hal_gnss_default)
-binder_call(system_app, hal_power_default)
 binder_call(system_app, hal_vibrator_default)
 binder_call(system_app, hal_wifi_supplicant_default)
 
-# Allow system app to find services 
-dontaudit system_app system_suspend_control_service:service_manager find;
-dontaudit system_app system_suspend_control_internal_service:service_manager find;
-
 # Aware
 get_prop(system_app, vendor_aware_available_prop)
-
-# Memory
-r_dir_file(system_app, proc_pagetypeinfo)
-
-# Incremental
-get_prop(system_app, incremental_prop)
-
-# allow apps like settings to check the file signature of an apk installed on
-# the Incremental File System, fill missing blocks and get the app status and loading progress
-allowxperm system_app apk_data_file:file ioctl {
-  INCFS_IOCTL_READ_SIGNATURE
-  INCFS_IOCTL_FILL_BLOCKS
-  INCFS_IOCTL_GET_BLOCK_COUNT
-  INCFS_IOCTL_GET_FILLED_BLOCKS
-};
 
 # Zram
 r_dir_file(system_app, sysfs_zram)
