@@ -420,7 +420,8 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 # Optimize
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
-    Settings
+    SystemUIGoogle \
+    SettingsGoogle
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -443,7 +444,7 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt packages
 PRODUCT_PACKAGES += \
-    MlkitBarcodeUIPrebuilt
+    privapp_whitelist_com.google.android.apps.mlkit
 
 # QTI
 PRODUCT_PACKAGES += \

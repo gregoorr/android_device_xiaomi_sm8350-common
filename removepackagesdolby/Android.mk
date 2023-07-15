@@ -3,7 +3,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := RemovePackagesDolby
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
-LOCAL_OVERRIDES_PACKAGES += Music MusicFX AudioFX
+LOCAL_OVERRIDES_PACKAGES += Music MusicFX AudioFX arcore talkback HelpRtcPrebuilt Velvet DevicePolicyPrebuilt
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_SRC_FILES := /dev/null
