@@ -82,7 +82,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=$(PRODUCT_DEVICE)
 TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8350
-TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig vendor/xiaomi_QGKI.config
+TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig vendor/debugfs.config vendor/xiaomi_QGKI.config
 
 BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom
@@ -164,7 +164,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2023-04-01
+VENDOR_SECURITY_PATCH := 2023-07-01
 
 # Sepolicy
 include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
